@@ -1,0 +1,19 @@
+# Static assets - serve as-is
+/assets/*  /assets/:splat  200
+/*.js      /:splat.js      200
+/*.css     /:splat.css     200
+/*.png     /:splat.png     200
+/*.ico     /:splat.ico     200
+/*.json    /:splat.json    200
+/*.svg     /:splat.svg     200
+/*.woff    /:splat.woff    200
+/*.woff2   /:splat.woff2   200
+/*.ttf     /:splat.ttf     200
+/*.map     /:splat.map     200
+/*.webp    /:splat.webp    200
+
+# Service Worker
+/sw.js     /sw.js          200
+
+# SPA fallback - everything else goes to index.html
+/*         /index.html     200
