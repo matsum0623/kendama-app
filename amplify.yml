@@ -27,6 +27,18 @@ customHeaders:
       - key: 'Cache-Control'
         value: 'no-cache'
 redirects:
+  - source: '/sw.js'
+    target: '/sw.js'
+    status: '200'
+    headers:
+      - key: 'Content-Type'
+        value: 'application/javascript; charset=utf-8'
+  - source: '/manifest.json'
+    target: '/manifest.json'
+    status: '200'
+    headers:
+      - key: 'Content-Type'
+        value: 'application/json; charset=utf-8'
   - source: '/assets/<*>'
     target: '/assets/<*>'
     status: '200'
@@ -38,9 +50,6 @@ redirects:
     status: '200'
   - source: '/<*.png>'
     target: '/<*.png>'
-    status: '200'
-  - source: '/<*.json>'
-    target: '/<*.json>'
     status: '200'
   - source: '/<*.ico>'
     target: '/<*.ico>'
