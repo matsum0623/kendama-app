@@ -3,6 +3,7 @@ import type { Route } from "./+types/grades";
 import { useState, useEffect } from "react";
 import { getPracticeData, type PracticeData } from "../utils/localStorage";
 import { GRADES, getGradeById, getNextGrade, getPreviousGrade } from "../data/grades";
+import { TabBar } from "../components/TabBar";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -125,28 +126,7 @@ export default function Grades() {
         </div>
       </div>
       
-      <nav className="tab-bar">
-        <Link to="/" className="tab-item">
-          <span className="tab-icon">🏠</span>
-          <span className="tab-label">ホーム</span>
-        </Link>
-        <Link to="/grades" className="tab-item active">
-          <span className="tab-icon">🏆</span>
-          <span className="tab-label">級・段</span>
-        </Link>
-        <Link to="/tricks" className="tab-item">
-          <span className="tab-icon">🪀</span>
-          <span className="tab-label">技</span>
-        </Link>
-        <Link to="/history" className="tab-item">
-          <span className="tab-icon">📋</span>
-          <span className="tab-label">履歴</span>
-        </Link>
-        <Link to="/settings" className="tab-item">
-          <span className="tab-icon">⚙️</span>
-          <span className="tab-label">設定</span>
-        </Link>
-      </nav>
+      <TabBar activeTab="grades" />
     </div>
   );
 }
